@@ -11,19 +11,19 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class Animal {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    protected String breed;
+    private String breed;
 
-    protected String name;
+    private String name;
 
-    protected Double cost;
+    private Double cost;
 
-    protected String character;
+    private String character;
 
-    protected LocalDate birthDate;
+    private LocalDate birthDate;
 
     @ManyToOne
     @JoinColumn(name = "type_id", nullable = false)
