@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet author="Max" id="create tables">
+        <sql>
+            CREATE TABLE IF NOT EXISTS public.animal(
+            id           bigint not null primary key,
+            breed         varchar(255),
+            name         varchar(255),
+            cost         numeric(38, 2),
+            character    varchar(255),
+            birth_date   date,
+            type_id      bigint
+            );
+
+            COMMENT ON COLUMN public.animal.id IS 'Уникальный ключ записи';
+            COMMENT ON COLUMN public.animal.breed IS 'Порода';
+            COMMENT ON COLUMN public.animal.name IS 'Имя';
+            COMMENT ON COLUMN public.animal.cost IS 'Цена';
+            COMMENT ON COLUMN public.animal.character IS 'Характер';
+            COMMENT ON COLUMN public.animal.birth_date IS 'Дата родждения';
+            COMMENT ON COLUMN public.animal.type_id IS 'Id типа животного';
+        </sql>
+        <rollback>
+            DROP TABLE public.animal;
+        </rollback>
+        <comment>
+            Первичная инициализация таблицы animal
+        </comment>
+
+        <loadData file="db/changelog/release-1.0.0/initialize_data.csv" tableName="animal"/>
+    </changeSet>
+
+</databaseChangeLog>
