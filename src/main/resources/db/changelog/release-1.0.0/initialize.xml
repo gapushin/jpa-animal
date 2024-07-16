@@ -7,8 +7,8 @@
     <changeSet author="Max" id="create tables">
         <sql>
             CREATE TABLE IF NOT EXISTS public.animal(
-            id           bigint not null primary key,
-            breed         varchar(255),
+            id           BIGSERIAL not null primary key,
+            breed        varchar(255),
             name         varchar(255),
             cost         numeric(38, 2),
             character    varchar(255),

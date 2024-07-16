@@ -1,6 +1,6 @@
-"id","breed","name","cost","character","birth_date","type_id"
-52,Husky,Aurora,1000000.00,super-cute,'2023-08-31',123
-53,Bengal,Musya,123.00,angry,'2023-07-30',124
-54,Kitovaya,Garry,222.00,stupid,'2023-06-29',125
-55,White Woolf,Petzl,99999.00,dangerous,'2023-05-28',125
-56,Koker,Djina,9999999999.00,super-cute,'2023-04-27',123
+"breed","name","cost","character","birth_date","type_id"
+Husky,Aurora,1000000.00,super-cute,'2023-08-31',1
+Bengal,Musya,123.00,angry,'2023-07-30',2
+Kitovaya,Garry,222.00,stupid,'2023-06-29',3
+White Woolf,Petzl,99999.00,dangerous,'2023-05-28',3
+Koker,Djina,9999999999.00,super-cute,'2023-04-27',1

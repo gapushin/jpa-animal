@@ -7,7 +7,7 @@
     <changeSet author="Max" id="create tables">
         <sql>
             CREATE TABLE IF NOT EXISTS public.animal_type(
-            id           bigint not null primary key,
+            id           BIGSERIAL not null primary key,
             name         varchar(255)
             );
 

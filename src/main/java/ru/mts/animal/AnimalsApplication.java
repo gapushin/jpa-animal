@@ -33,8 +33,6 @@ public class AnimalsApplication {
         return args -> {
             System.out.println("Running.....");
 
-
-
             System.out.println("— — — — — — — — — — — — — — — — — — getAllAnimals— — — — — — — — — — — — — — — — — — — — — —");
             List<Animal> animals = animalService.getAllAnimals();
             System.out.println(animals.toString());
@@ -44,28 +42,23 @@ public class AnimalsApplication {
             System.out.println(animalsByName.toString());
 
             System.out.println("— — — — — — — — — — — — — — — — — — —addAnimal — — — — — — — — — — — — — — — — — — — — —");
+            Optional<AnimalType> type = animalTypeService.getAnimalType(2L);
 
-                Optional<AnimalType> type = animalTypeService.getAnimalType(124L);
-                if (type.isPresent()) {
-                    Animal cat = new Animal();
-                    cat.setBreed("Dvorovaya");
-                    cat.setName("Murka");
-                    cat.setCost(12.00);
-                    cat.setCharacter("Dobraya");
-                    cat.setBirthDate(LocalDate.of(2020, 10, 10));
-                    cat.setType(type.get());
-                    animalService.addAnimal(cat);
-                } else {
-                    throw new RuntimeException("Animal type doesn't exist");
-                }
+            if (type.isPresent()) {
+                Animal cat = new Animal();
+                cat.setBreed("Dvorovaya");
+                cat.setName("Murka");
+                cat.setCost(12.00);
+                cat.setCharacter("Dobraya");
+                cat.setBirthDate(LocalDate.of(2020, 10, 10));
+                cat.setType(type.get());
+                animalService.addAnimal(cat);
+            } else {
+                throw new RuntimeException("Animal type doesn't exist");
+            }
 
             List<Animal> catFromDb = animalService.getAnimalsByName("Murka");
             System.out.println(catFromDb.toString());
-
-
-
-
-
         };
     }
 }
