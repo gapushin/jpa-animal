@@ -59,6 +59,30 @@ public class AnimalsApplication {
 
             List<Animal> catFromDb = animalService.getAnimalsByName("Murka");
             System.out.println(catFromDb.toString());
+
+            System.out.println("— — — — — — — — — — — — — — — — — — —removeAnimal — — — — — — — — — — — — — — — — — — — — —");
+
+            if (type.isPresent()) {
+                Animal cat2 = new Animal();
+                cat2.setBreed("Todelete");
+                cat2.setName("Todelete");
+                cat2.setCost(12.00);
+                cat2.setCharacter("Todelete");
+                cat2.setBirthDate(LocalDate.of(2020, 10, 10));
+                cat2.setType(type.get());
+                animalService.addAnimal(cat2);
+
+                List<Animal> animals2 = animalService.getAllAnimals();
+                System.out.println("Before remove " + animals2.toString());
+
+                animalService.deleteAnimal(7L);
+
+                List<Animal> animals3 = animalService.getAllAnimals();
+                System.out.println("After remove " + animals3.toString());
+
+            } else {
+                throw new RuntimeException("Animal type doesn't exist");
+            }
         };
     }
 }
