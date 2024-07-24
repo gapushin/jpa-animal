@@ -8,8 +8,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
 import ru.mts.animal.entity.Animal;
 import ru.mts.animal.entity.AnimalType;
-import ru.mts.animal.service.AnimalService;
-import ru.mts.animal.service.AnimalTypeService;
+import ru.mts.animal.service.animal.AnimalService;
+import ru.mts.animal.service.animalType.AnimalTypeService;
 
 import java.time.LocalDate;
 import java.util.List;

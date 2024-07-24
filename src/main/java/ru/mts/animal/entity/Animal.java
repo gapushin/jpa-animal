@@ -15,18 +15,24 @@ public class Animal {
     @Column(name = "id")
     private Long id;
 
+    @Column
     private String breed;
 
+    @Column
     private String name;
 
+    @Column
     private Double cost;
 
+    @Column
     private String character;
 
+    @Column
     private LocalDate birthDate;
 
     @ManyToOne
     @JoinColumn(name = "type_id", nullable = false)
+    @Column
     private AnimalType type;
 
 }

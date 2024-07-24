@@ -13,5 +13,6 @@ public class AnimalType {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column
     private String name;
 }
